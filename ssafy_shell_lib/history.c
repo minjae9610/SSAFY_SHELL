@@ -3,7 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#define HISTORY_FILE ".history"
+#define HISTORY_FILE ".ssafy_shell_history"
 
 bool print_history()
 {
