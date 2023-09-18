@@ -15,7 +15,7 @@ int main()
             cmd = get_history(atoi(cmd + 1));
             if (cmd == NULL)
             {
-                putstr_fd(1, "ERROR : No such command in history.\n");
+                putstr_fd(2, "ERROR : No such command in history.\n");
                 continue;
             }
         }
@@ -54,5 +54,5 @@ void exec(char *cmd)
     else if (!strcmp(cmd, "hclear"))
         clear_history();
     else
-        putstr_fd(1, "ERROR : Command not found.\n");
+        putstr_fd(2, "ERROR : Command not found.\n");
 }
