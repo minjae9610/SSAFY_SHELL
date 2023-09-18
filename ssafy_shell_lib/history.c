@@ -3,9 +3,11 @@
 #include <string.h>
 #include <unistd.h>
 
+#define HISTORY_FILE ".history"
+
 bool print_history()
 {
-    FILE *fp = fopen("history", "r");
+    FILE *fp = fopen(HISTORY_FILE, "r");
     if (fp == NULL)
         return false;
     char cmd[101];
@@ -21,7 +23,7 @@ bool print_history()
 
 bool add_history(char *cmd)
 {
-    FILE *fp = fopen("history", "a");
+    FILE *fp = fopen(HISTORY_FILE, "a");
     if (fp == NULL)
         return false;
     fseek(fp, 0, SEEK_END);
@@ -33,7 +35,7 @@ bool add_history(char *cmd)
 
 bool clear_history()
 {
-    FILE *fp = fopen("history", "w");
+    FILE *fp = fopen(HISTORY_FILE, "w");
     if (fp == NULL)
         return false;
     fclose(fp);
@@ -43,7 +45,7 @@ bool clear_history()
 char *get_history(int index)
 {
     static char history[101];
-    FILE *fp = fopen("history", "r");
+    FILE *fp = fopen(HISTORY_FILE, "r");
     if (fp == NULL)
         return NULL;
     int i = 1;
