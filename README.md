@@ -1,1 +1,2 @@
 # SSAFY_SHELL
+SSAFY SSAFY_SHELL project
